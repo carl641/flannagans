@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Flanagan Lumber Company logo">
+  <title>Flanagan Lumber Company</title>
+  <rect x="4" y="26" width="56" height="10" rx="2" fill="#a9764a" stroke="#815430" stroke-width="1.5"/>
+  <rect x="8" y="40" width="48" height="10" rx="2" fill="#c9a06e" stroke="#8a5f36" stroke-width="1.5"/>
+  <path d="M32 4 L56 22 H8 Z" fill="#711d20"/>
+  <ellipse cx="20" cy="31" rx="4" ry="1.8" fill="none" stroke="#815430" stroke-width="1"/>
+  <ellipse cx="44" cy="45" rx="4" ry="1.8" fill="none" stroke="#8a5f36" stroke-width="1"/>
+</svg>
