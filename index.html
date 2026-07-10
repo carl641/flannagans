@@ -98,21 +98,17 @@
     color: var(--ink);
   }
   .logo-mark {
-    width: 52px;
-    height: 52px;
+    height: 72px;
+    width: auto;
     flex: none;
+    display: block;
+    border-radius: 4px;
   }
   .logo-name {
     font-size: 1.35rem;
     font-weight: bold;
     color: var(--brand);
     letter-spacing: .02em;
-  }
-  .logo-sub {
-    font-size: .72rem;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--muted);
   }
   nav.main-nav ul {
     list-style: none;
@@ -141,9 +137,8 @@
   .hero {
     position: relative;
     background:
-      linear-gradient(rgba(64, 15, 17, .88), rgba(113, 29, 32, .82)),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='120' viewBox='0 0 400 120'%3E%3Crect width='400' height='120' fill='%23a9764a'/%3E%3Cpath d='M0 12 Q100 6 200 12 T400 10' stroke='%23926038' stroke-width='2.5' fill='none' opacity='.55'/%3E%3Cpath d='M0 30 Q120 38 240 30 T400 34' stroke='%23815430' stroke-width='1.8' fill='none' opacity='.5'/%3E%3Cpath d='M0 52 Q90 44 210 52 T400 48' stroke='%23926038' stroke-width='2.2' fill='none' opacity='.5'/%3E%3Cpath d='M0 74 Q140 82 260 72 T400 78' stroke='%23815430' stroke-width='1.5' fill='none' opacity='.45'/%3E%3Cpath d='M0 96 Q100 90 220 98 T400 92' stroke='%23926038' stroke-width='2.5' fill='none' opacity='.5'/%3E%3C/svg%3E");
-    background-size: cover, 400px 120px;
+      linear-gradient(rgba(64, 15, 17, .82), rgba(64, 15, 17, .72)),
+      url("images/flanagan-lumber-company-hero-home-01-1920w.jpg") center / cover no-repeat;
     color: var(--white);
     text-align: center;
     padding: 6rem 0 7.5rem;
@@ -487,17 +482,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="#top">
-      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
-        <rect x="4" y="26" width="56" height="10" rx="2" fill="#a9764a" stroke="#815430" stroke-width="1.5"/>
-        <rect x="8" y="40" width="48" height="10" rx="2" fill="#c9a06e" stroke="#8a5f36" stroke-width="1.5"/>
-        <path d="M32 4 L56 22 H8 Z" fill="#711d20"/>
-        <ellipse cx="20" cy="31" rx="4" ry="1.8" fill="none" stroke="#815430" stroke-width="1"/>
-        <ellipse cx="44" cy="45" rx="4" ry="1.8" fill="none" stroke="#8a5f36" stroke-width="1"/>
-      </svg>
-      <span>
-        <span class="logo-name">Flanagan Lumber Company</span><br>
-        <span class="logo-sub sans">Athens, Alabama &bull; Est. 1904</span>
-      </span>
+      <img class="logo-mark" src="images/flanagan-lumber-company-inc-logo-312w.webp" alt="Flanagan Lumber Co. Inc. &mdash; All Kinds of Building Material, Since 1904" width="310" height="155">
     </a>
     <nav class="main-nav sans" aria-label="Main navigation">
       <ul>
