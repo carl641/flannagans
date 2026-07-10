@@ -256,34 +256,97 @@
     margin: 1.1rem auto 0;
   }
 
-  /* ---------- Products grid ---------- */
-  .products-grid {
+  /* ---------- What We Carry ---------- */
+  .carry-list { display: grid; gap: 2.75rem; }
+  .carry-item {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-    gap: 1.5rem;
-  }
-  .product-card {
+    grid-template-columns: 1.05fr .95fr;
+    align-items: stretch;
     background: var(--white);
     border: 1px solid #e8ddd0;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 3px 12px rgba(46, 38, 33, .07);
+    box-shadow: 0 6px 20px rgba(46, 38, 33, .09);
     transition: transform .18s, box-shadow .18s;
+    scroll-margin-top: 130px;
+  }
+  .carry-item:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(46, 38, 33, .16); }
+  .carry-item:nth-child(even) .carry-photo { order: 2; }
+  .carry-photo {
+    position: relative;
+    min-height: 340px;
+  }
+  .carry-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carry-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(46, 38, 33, 0) 55%, rgba(46, 38, 33, .38));
+    pointer-events: none;
+  }
+  .carry-num {
+    position: absolute;
+    top: 1.1rem;
+    left: 1.1rem;
+    z-index: 1;
+    background: var(--brand);
+    color: var(--wood-light);
+    font-weight: bold;
+    font-size: .95rem;
+    letter-spacing: .14em;
+    padding: .4rem .85rem;
+    border-radius: 999px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+  }
+  .carry-copy {
+    padding: 2.8rem 2.6rem;
     display: flex;
     flex-direction: column;
-  }
-  .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 24px rgba(46, 38, 33, .14); }
-  .product-card .card-top {
-    height: 96px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    border-bottom: 4px solid var(--brand);
+    border-top: 6px solid var(--brand);
   }
-  .product-card .card-top svg { width: 52px; height: 52px; }
-  .product-card .card-body { padding: 1.4rem 1.5rem 1.6rem; flex: 1; }
-  .product-card h3 { color: var(--brand); font-size: 1.2rem; margin-bottom: .55rem; }
-  .product-card p { font-size: .93rem; color: var(--muted); }
+  .carry-copy .kicker { margin-bottom: .5rem; }
+  .carry-copy h3 { color: var(--brand); font-size: clamp(1.4rem, 2.6vw, 1.85rem); margin-bottom: .9rem; }
+  .carry-copy p { color: #4a3f37; margin-bottom: 1.2rem; }
+  .carry-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 1.4rem;
+  }
+  .carry-tags li {
+    background: var(--wood-pale);
+    color: #6b4a26;
+    border: 1px solid #e2d1ba;
+    font-size: .78rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .35rem .8rem;
+    border-radius: 999px;
+  }
+  .carry-link {
+    align-self: flex-start;
+    color: var(--brand);
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-size: .9rem;
+    border-bottom: 2px solid var(--wood-light);
+    padding-bottom: .15rem;
+    transition: color .15s, border-color .15s;
+  }
+  .carry-link:hover { color: var(--brand-light); border-color: var(--brand); }
+  .carry-link .arrow { display: inline-block; transition: transform .15s; }
+  .carry-link:hover .arrow { transform: translateX(4px); }
 
   /* ---------- About ---------- */
   .about { background: var(--cream); }
@@ -462,6 +525,10 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 860px) {
     .about-grid, .visit-grid, .footer-grid { grid-template-columns: 1fr; }
+    .carry-item { grid-template-columns: 1fr; }
+    .carry-item:nth-child(even) .carry-photo { order: 0; }
+    .carry-photo { min-height: 240px; }
+    .carry-copy { padding: 2rem 1.6rem; }
     .header-inner { justify-content: center; text-align: center; }
     .hero { padding: 4.5rem 0 6rem; }
     section { padding: 3.2rem 0; }
@@ -488,8 +555,9 @@
       <ul>
         <li><a href="#top" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#lumber">Lumber</a></li>
+        <li><a href="#building-materials">Building Materials</a></li>
         <li><a href="#hardware">Indoor Hardware</a></li>
+        <li><a href="#lumber">Lumber</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -505,7 +573,7 @@
       <h1>Quality Lumber &amp; Building Materials,<br>Built on Three Generations of Trust</h1>
       <p class="lede">From lumber and hardware to paint and custom doors — and everything in between — Flanagan Lumber Company supplies your construction and remodeling needs with top name-brand materials and hometown service.</p>
       <div class="hero-actions sans">
-        <a class="btn btn-wood" href="#lumber">Browse Our Products</a>
+        <a class="btn btn-wood" href="#products">Browse Our Products</a>
         <a class="btn btn-outline" href="#contact">Get In Touch</a>
       </div>
     </div>
@@ -534,8 +602,8 @@
     </div>
   </div>
 
-  <!-- Products -->
-  <section id="lumber">
+  <!-- What We Carry -->
+  <section id="products">
     <div class="container">
       <div class="section-head">
         <span class="kicker sans">What We Carry</span>
@@ -543,61 +611,65 @@
         <p>Everything you need to build, remodel, and finish the job — stocked and ready at our Athens lumberyard.</p>
         <hr class="rule">
       </div>
-      <div class="products-grid">
-        <article class="product-card">
-          <div class="card-top wood-texture-light">
-            <svg viewBox="0 0 56 56" fill="none" aria-hidden="true"><rect x="6" y="14" width="44" height="10" rx="2" fill="#a9764a" stroke="#815430" stroke-width="2"/><rect x="6" y="30" width="44" height="10" rx="2" fill="#c9a06e" stroke="#8a5f36" stroke-width="2"/><ellipse cx="20" cy="19" rx="5" ry="2" stroke="#815430" stroke-width="1.5" fill="none"/><ellipse cx="38" cy="35" rx="5" ry="2" stroke="#8a5f36" stroke-width="1.5" fill="none"/></svg>
+      <div class="carry-list">
+
+        <article class="carry-item" id="building-materials">
+          <div class="carry-photo">
+            <span class="carry-num sans" aria-hidden="true">01</span>
+            <img src="images/flanagan-lumber-company-content-home-06-1920w.webp" alt="Building materials stocked at Flanagan Lumber Company" loading="lazy">
           </div>
-          <div class="card-body">
-            <h3>Lumber</h3>
-            <p>Quality dimensional lumber, treated lumber, and framing material for projects of every size — hand-picked loads welcome.</p>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="card-top wood-texture-light">
-            <svg viewBox="0 0 56 56" fill="none" aria-hidden="true"><rect x="14" y="8" width="28" height="40" rx="2" stroke="#711d20" stroke-width="2.5" fill="#fff"/><rect x="19" y="13" width="18" height="14" fill="#c9a06e" stroke="#8a5f36" stroke-width="1.5"/><circle cx="36" cy="34" r="2" fill="#711d20"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Doors</h3>
-            <p>Interior and exterior doors, including custom door orders, to fit your home or commercial build just right.</p>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="card-top wood-texture-light">
-            <svg viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M10 24c0-6 8-14 18-14s18 8 18 14v4H10z" fill="#711d20"/><rect x="24" y="28" width="8" height="18" rx="2" fill="#a9764a" stroke="#815430" stroke-width="1.5"/><path d="M14 20c2-4 7-7 14-7" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Paint &amp; Finishes</h3>
-            <p>Name-brand paints, stains, and finishing supplies to protect your work and make it shine.</p>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="card-top wood-texture-light">
-            <svg viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M6 30l22-18 22 18" stroke="#711d20" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M12 26v0l16-13 16 13" stroke="#a9764a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M10 36h36M14 42h28" stroke="#711d20" stroke-width="3" stroke-linecap="round"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Shingles &amp; Roofing</h3>
-            <p>Dependable roofing shingles and accessories to keep every project covered from the top down.</p>
-          </div>
-        </article>
-        <article class="product-card" id="hardware">
-          <div class="card-top wood-texture-light">
-            <svg viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M20 10a9 9 0 1 0 5 16.5V44a3 3 0 0 0 6 0V26.5A9 9 0 0 0 36 10l-5 5-6-1-1-6z" stroke="#711d20" stroke-width="2.5" fill="#fff" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="card-body">
-            <h3>Indoor Hardware</h3>
-            <p>From insulation to door hardware — a full selection of indoor hardware and materials for finishing every room.</p>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="card-top wood-texture-light">
-            <svg viewBox="0 0 56 56" fill="none" aria-hidden="true"><rect x="8" y="20" width="40" height="26" rx="2" stroke="#711d20" stroke-width="2.5" fill="#fff"/><path d="M8 28h40M8 36h40M20 20v26M36 20v26" stroke="#a9764a" stroke-width="2"/><path d="M18 20v-8h20v8" stroke="#711d20" stroke-width="2.5" fill="none"/></svg>
-          </div>
-          <div class="card-body">
+          <div class="carry-copy">
+            <span class="kicker sans">From Foundation to Finish</span>
             <h3>Building Materials</h3>
-            <p>Insulation, siding, concrete products, and the everyday materials contractors count on — with special orders welcome.</p>
+            <p>At Flanagan Lumber Company, we offer a wide range of building materials to meet all your construction needs. From lumber to drywall, we've got you covered. Whether you're a professional contractor or a DIY enthusiast, our knowledgeable staff can help you find exactly what you're looking for.</p>
+            <ul class="carry-tags sans">
+              <li>Drywall</li>
+              <li>Siding</li>
+              <li>Concrete Products</li>
+              <li>Special Orders</li>
+            </ul>
+            <a class="carry-link sans" href="#contact">Learn More <span class="arrow">&rarr;</span></a>
           </div>
         </article>
+
+        <article class="carry-item" id="hardware">
+          <div class="carry-photo">
+            <span class="carry-num sans" aria-hidden="true">02</span>
+            <img src="images/flanagan-lumber-company-inc-indoor-hardware-1920w.webp" alt="Indoor hardware selection at Flanagan Lumber Company" loading="lazy">
+          </div>
+          <div class="carry-copy">
+            <span class="kicker sans">The Details That Finish the Job</span>
+            <h3>Indoor Hardware</h3>
+            <p>Our selection of indoor hardware and materials includes everything from insulation to doors. We understand that the right hardware can make all the difference, which is why we stock a variety of options to suit any style and function.</p>
+            <ul class="carry-tags sans">
+              <li>Insulation</li>
+              <li>Doors</li>
+              <li>Door Hardware</li>
+              <li>Trim &amp; Finish</li>
+            </ul>
+            <a class="carry-link sans" href="#contact">Learn More <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="carry-item" id="lumber">
+          <div class="carry-photo">
+            <span class="carry-num sans" aria-hidden="true">03</span>
+            <img src="images/flanagan-lumber-company-inc-lumber-1920w.jpg" alt="Stacked quality lumber at Flanagan Lumber Company" loading="lazy">
+          </div>
+          <div class="carry-copy">
+            <span class="kicker sans">The Heart of What We Do</span>
+            <h3>Lumber</h3>
+            <p>Lumber is at the heart of what we do. We offer a comprehensive selection of high-quality wood, perfect for any construction or renovation project. From treated lumber for outdoor use to fine hardwoods for interior finishes, you'll find it here.</p>
+            <ul class="carry-tags sans">
+              <li>Treated Lumber</li>
+              <li>Framing</li>
+              <li>Fine Hardwoods</li>
+              <li>Hand-Picked Loads</li>
+            </ul>
+            <a class="carry-link sans" href="#contact">Learn More <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -708,8 +780,9 @@
         <ul class="sans">
           <li><a href="#top">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#lumber">Lumber</a></li>
+          <li><a href="#building-materials">Building Materials</a></li>
           <li><a href="#hardware">Indoor Hardware</a></li>
+          <li><a href="#lumber">Lumber</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
