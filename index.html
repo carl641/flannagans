@@ -503,6 +503,62 @@
   .carry-link .arrow { display: inline-block; transition: transform .15s; }
   .carry-link:hover .arrow { transform: translateX(4px); }
 
+  /* ---------- Brand marquee ---------- */
+  .brands {
+    margin-top: 3.6rem;
+    padding-top: 2.6rem;
+    border-top: 1px solid #e0d0b3;
+  }
+  .brands-head { text-align: center; margin-bottom: 1.8rem; }
+  .brands-head .kicker { font-size: 1.35rem; }
+  .brands-head p { color: var(--muted); font-size: .95rem; max-width: 40rem; margin: .35rem auto 0; }
+  .brand-track-wrap {
+    position: relative;
+    overflow: hidden;
+    padding: .4rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .brand-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 2.6rem;
+    animation: brand-scroll 46s linear infinite;
+  }
+  .brand-track-wrap:hover .brand-track,
+  .brand-track-wrap:focus-within .brand-track { animation-play-state: paused; }
+  @keyframes brand-scroll {
+    from { transform: translateX(0); }
+    /* half the track plus half a gap = exactly one full set, so the loop is seamless */
+    to { transform: translateX(calc(-50% - 1.3rem)); }
+  }
+  .brand-item {
+    flex: none;
+    width: 170px;
+    height: 92px;
+    display: grid;
+    place-items: center;
+    background: var(--white);
+    border: 1px solid #e4d7c3;
+    border-radius: 10px;
+    padding: .9rem 1.1rem;
+    box-shadow: 0 3px 12px rgba(43, 33, 26, .08);
+  }
+  .brand-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: .72;
+    transition: filter .2s, opacity .2s;
+  }
+  .brand-item:hover img { filter: none; opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .brand-track-wrap { overflow-x: auto; }
+    .brand-track { animation: none; }
+  }
+
   /* ---------- Promise ---------- */
   .promise { background: var(--kraft); position: relative; }
   .promise-board {
@@ -956,6 +1012,114 @@
           </div>
         </article>
 
+      </div>
+
+      <!-- Brands we stock -->
+      <div class="brands reveal">
+        <div class="brands-head">
+          <span class="kicker script">Names you already trust</span>
+          <p>We stock the brands the pros ask for by name &mdash; and stand behind every one of them.</p>
+        </div>
+        <div class="brand-track-wrap">
+          <ul class="brand-track" role="list">
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-andersen-640w.png" alt="Andersen" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-masonite-640w.png" alt="Masonite" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-ppg-640w.png" alt="PPG Paints" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-milwaukee-640w.png" alt="Milwaukee Tools" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-stonecraft-640w.png" alt="StoneCraft" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-freud-640w.png" alt="Freud Diablo" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-kwikset-640w.png" alt="Kwikset" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-true-640w.png" alt="True Value" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-ready-seal-640w.png" alt="Ready Seal" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-proluxe-640w.png" alt="ProLuxe" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-stanley-640w.png" alt="Stanley" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-athens-640w.png" alt="Athens-Limestone Home Builders Association" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-logo-paslode-640w.jpg" alt="Paslode" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-logo-timbertech-640w.jpg" alt="TimberTech" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-logo-moistureshield-640w.jpg" alt="MoistureShield" decoding="async">
+          </li>
+          <li class="brand-item">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-logo-ykk-ap-32eb62c6-640w.jpg" alt="YKK AP" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-andersen-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-masonite-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-ppg-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-milwaukee-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-stonecraft-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-freud-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-kwikset-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-true-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-ready-seal-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-proluxe-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-stanley-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-inc-athens-640w.png" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-logo-paslode-640w.jpg" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-logo-timbertech-640w.jpg" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-logo-moistureshield-640w.jpg" alt="" decoding="async">
+          </li>
+          <li class="brand-item" aria-hidden="true">
+            <img src="https://le-cdn.hibuwebsites.com/79e72047aca544f395e74f7842f24b06/dms3rep/multi/opt/flanagan-lumber-company-logo-ykk-ap-32eb62c6-640w.jpg" alt="" decoding="async">
+          </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
