@@ -694,37 +694,6 @@
 
   /* ---------- Testimonials ---------- */
   .word { background: var(--cream); }
-  .word-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.8rem;
-    align-items: stretch;
-  }
-  .note {
-    position: relative;
-    background: var(--kraft);
-    border: 1px solid #d8c6a6;
-    border-radius: 6px;
-    padding: 2.4rem 1.8rem 1.8rem;
-    box-shadow: 0 8px 20px rgba(43, 33, 26, .14);
-    display: flex;
-    flex-direction: column;
-  }
-  .note:nth-child(odd) { transform: rotate(-.8deg); }
-  .note:nth-child(even) { transform: rotate(.8deg); }
-  .note blockquote {
-    font-size: 1.05rem;
-    color: #443729;
-    font-style: italic;
-    flex: 1;
-  }
-  .note blockquote::before { content: "\201C"; color: var(--wood); font-size: 2.2rem; line-height: 0; vertical-align: -0.35em; margin-right: .2rem; font-style: normal; }
-  .note figcaption {
-    margin-top: 1.2rem;
-    color: var(--brand);
-    font-size: 1.35rem;
-  }
-  .note figcaption span { display: block; font-family: "Avenir Next", "Segoe UI", Verdana, sans-serif; font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
 
   /* ---------- Visit / contact ---------- */
   .visit { background: var(--kraft); }
@@ -851,7 +820,6 @@
     .hero { padding: 4.6rem 0 6.5rem; }
     .hero-stamp { display: none; }
     section { padding: 3.4rem 0; }
-    .note:nth-child(odd), .note:nth-child(even) { transform: none; }
   }
 </style>
 </head>
@@ -1245,27 +1213,6 @@
         <p>Around here, your reputation is built one handshake at a time. Here's what our neighbors say.</p>
         <hr class="rule">
       </div>
-      <div class="word-grid">
-        <figure class="note reveal">
-          <span class="nail nail-tl" aria-hidden="true"></span>
-          <span class="nail nail-tr" aria-hidden="true"></span>
-          <blockquote>They loaded my truck in the pouring rain and never stopped smiling. You don't get that at the big-box stores.</blockquote>
-          <figcaption class="script">&mdash; Earl W. <span>Homeowner &bull; Athens</span></figcaption>
-        </figure>
-        <figure class="note reveal">
-          <span class="nail nail-tl" aria-hidden="true"></span>
-          <span class="nail nail-tr" aria-hidden="true"></span>
-          <blockquote>Third generation of my family buying from the Flanagans. My granddad, my daddy, and now me &mdash; same counter, same welcome.</blockquote>
-          <figcaption class="script">&mdash; Ruthie M. <span>Limestone County</span></figcaption>
-        </figure>
-        <figure class="note reveal">
-          <span class="nail nail-tl" aria-hidden="true"></span>
-          <span class="nail nail-tr" aria-hidden="true"></span>
-          <blockquote>Called at 7 a.m. with a framing question and got a real answer from a real builder before my coffee got cold.</blockquote>
-          <figcaption class="script">&mdash; Dale H. <span>Contractor &bull; North Alabama</span></figcaption>
-        </figure>
-      </div>
-
       <!-- Trustindex reviews widget -->
       <div class="trustindex-widget">
         <script defer async src="https://cdn.trustindex.io/loader.js?7e9bbce77229856f040661383ce"></script>
